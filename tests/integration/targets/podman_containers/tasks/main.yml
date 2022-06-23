@@ -370,6 +370,8 @@
               otheralbe: othervalue
             volumes:
               - /tmp:/data
+            mounts:
+              - type=devpts,destination=/dev/pts
           - name: container1
             image: docker.io/alpine:3.7
             state: started
@@ -401,6 +403,8 @@
               otheralbe: othervalue
             volumes:
               - /tmp:/data
+            mounts:
+              - type=devpts,destination=/dev/pts
       register: test
 
     - name: Check output is correct
